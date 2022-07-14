@@ -5,20 +5,32 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="index.js" defer></script>
 </head>
 <body>
-    <script>
-    function books(name,author,pages,read) {
-        this.name = name;
-        this.author = author;
-        this.pages = pages;
-        this.read = read;
-        this.info = function () {
-           return( name +" by "+ author+ ","+ pages+ " pages," + read);
-        }
-    }
-    let book= new books("Harrypotter","J.K rowling",224,"not read yet");
-    console.log(book.info());
-    </script>
+    <div class="homepage">
+        <h1>Library</h1>
+        <button class="newbook">Add New Book</button>
+    </div>
+    <div class="signupform">
+        <form id="form" style="display:none">
+            <label for="title">Title:</label>
+            <input type="text" id="title" name="title">
+            <label for="Author">Author:</label>
+            <input type="text" id="Author" name="Author">
+            <label for="Pages">Pages:</label>
+            <input type="number" id="Pages" name="Pages">
+            <div class="label1">
+                <label for="Read or Not">Read ?</label>
+                <input type="checkbox" id="Readornot" name="Readornot">
+            </div>
+            <div class="label2">
+                <button type="submit">Submit</button>
+            </div>
+        </form>
+    </div>
+    <div class="cards" style="display: none;"> 
+    </div>
 </body>
 </html>
