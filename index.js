@@ -18,6 +18,7 @@ let cards= document.querySelector(".cards");
 
 function addCard(newBook)                                       // function to create new card
 {
+ /*
 let titlename = document.createElement("header");               // creates a header element inside Document
 let authorname =  document.createElement("p");
 let pagesnum = document.createElement("p");
@@ -29,7 +30,22 @@ authorname.appendChild(text1);
 pagesnum.appendChild(text2);
 cards.appendChild(titlename);                                   //adds the header element as a child node with Cards
 cards.appendChild(authorname);
-cards.appendChild(pagesnum);
+cards.appendChild(pagesnum); */
+let divs = document.createElement("div");
+let texts = document.createElement("div");
+let titlename = document.createElement("p");
+let authorname = document.createElement("p");
+let pagesnum = document.createElement("p");
+texts.classList.add("texts");
+divs.classList.add("divs");
+titlename.innerHTML=newBook.name;
+authorname.innerHTML=newBook.author;
+pagesnum.innerHTML = `${newBook.pages} pages`;
+texts.appendChild(titlename);
+texts.appendChild(authorname);
+texts.appendChild(pagesnum);
+divs.appendChild(texts);
+cards.appendChild(divs);
 }
 
 let button = document.querySelector('button');                   // calls the button selector from HTML 
