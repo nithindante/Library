@@ -2,50 +2,47 @@ function books(name,author,pages,read) {                        //Constructor fu
     this.name = name;
     this.author = author;
     this.pages = pages;
-    this.read = read;
 }
 
-let myLibrary=[];                                               //initialies empty array 
-                
+books.prototype.info = function show() 
+{
+    let read= document.querySelector()
+}
+let myLibrary=[];                                               //initialies empty array           
 function addBook(titleName,authorName,pagesnumber)              // creates function to add Book      
 {            
-let newBook =  new books(titleName,authorName,pagesnumber);     // creates a object called newBook  
-myLibrary.push(newBook);                                        // pushes the NewBook object into an empty array
-addCard(newBook);                                               // calls the function to create card 
+    let newBook =  new books(titleName,authorName,pagesnumber);     // creates a object called newBook  
+    myLibrary.push(newBook);                                        // pushes the NewBook object into an empty array
+    addCard(newBook);                                               // calls the function to create card 
 }
-
 let cards= document.querySelector(".cards");            
-
-function addCard(newBook)                                       // function to create new card
+function addCard(newBook)                                       // function to create new card with newbook as parameter
 {
- /*
-let titlename = document.createElement("header");               // creates a header element inside Document
-let authorname =  document.createElement("p");
-let pagesnum = document.createElement("p");
-let text = document.createTextNode(newBook.name);               // creates a text node which has the content "name"
-let text1 = document.createTextNode(newBook.author);
-let text2 = document.createTextNode(newBook.pages);
-titlename.appendChild(text);                                    // adds the text node to the header element
-authorname.appendChild(text1);
-pagesnum.appendChild(text2);
-cards.appendChild(titlename);                                   //adds the header element as a child node with Cards
-cards.appendChild(authorname);
-cards.appendChild(pagesnum); */
-let divs = document.createElement("div");
-let texts = document.createElement("div");
-let titlename = document.createElement("p");
-let authorname = document.createElement("p");
-let pagesnum = document.createElement("p");
-texts.classList.add("texts");
-divs.classList.add("divs");
-titlename.innerHTML=newBook.name;
-authorname.innerHTML=newBook.author;
-pagesnum.innerHTML = `${newBook.pages} pages`;
-texts.appendChild(titlename);
-texts.appendChild(authorname);
-texts.appendChild(pagesnum);
-divs.appendChild(texts);
-cards.appendChild(divs);
+    let img = document.createElement("img");
+    img.src = "trash.svg";
+    let divs = document.createElement("div");                       //created a Div called "Divs"
+    let texts = document.createElement("div");          
+    let titlename = document.createElement("p");                    //created a p element called "Titlename"
+    let authorname = document.createElement("p");
+    let pagesnum = document.createElement("p");
+    let deleteButton =  document.createElement("div");
+    texts.classList.add("texts");                                   // added a class called texts to created text(div). 
+    divs.classList.add("divs");
+    deleteButton.classList.add("deleteButton");
+    titlename.innerHTML=newBook.name;                               // the new created object's name is assigned to text content of titleName
+    authorname.innerHTML=newBook.author;
+    deleteButton=img;
+    pagesnum.innerHTML = `${newBook.pages} pages`;
+    texts.appendChild(titlename);                                   // add titlename(p element) as a child of texts
+    texts.appendChild(authorname);                      
+    texts.appendChild(pagesnum);
+    texts.appendChild(deleteButton);
+    divs.appendChild(texts);                                        // add texts class as child of divs
+    cards.appendChild(divs);                                        // add divs class as child of cards
+    img.addEventListener("click", function deletecards()
+    {
+        cards.removeChild(divs);
+    });
 }
 
 let button = document.querySelector('button');                   // calls the button selector from HTML 
