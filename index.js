@@ -27,7 +27,7 @@ function addCard(newBook)                                           //function t
     let authorname = document.createElement("p");
     let pagesnum = document.createElement("p");
 
-    let label1 =document.createElement("div");                      // created elements as similar to toggle switch.
+    let label1 =document.createElement("div");                      // created elements as similar to toggle
     label1.classList.add("label1");                             
 
     let read =  document.createElement("label");
@@ -57,13 +57,16 @@ function addCard(newBook)                                           //function t
     texts.appendChild(titlename);                                   // add titlename(p element) as a child of texts
     texts.appendChild(authorname);                      
     texts.appendChild(pagesnum);
-    texts.appendChild(deleteButton);
     divs.appendChild(texts);                                        // add texts class as child of divs
     cards.appendChild(divs);                                        // add divs class as child of cards
     img.addEventListener("click", function deletecards()            // function to remove added cards 
     {
         cards.removeChild(divs);
     });
+    if(newBook.read)
+    {
+        readinput.click();
+    }
 }
 
 let button = document.querySelector('button');                   // calls the button selector from HTML 
