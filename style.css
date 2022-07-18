@@ -61,7 +61,7 @@ h1{
 .texts{
     position: relative;
 }
-.texts>p:nth-child(1)
+.texts>p:nth-child(2)
 {
 position: absolute;
 top:-5px;
@@ -69,14 +69,14 @@ left:30px;
 font-weight: bolder;
 }
 
-.texts>p:nth-child(2)
+.texts>p:nth-child(3)
 {
    position: absolute;
     top:25px;
     left:10px;
 }
 
-.texts>p:nth-child(3)
+.texts>p:nth-child(4)
 {
     position: absolute;
     top:50px;
@@ -85,7 +85,7 @@ font-weight: bolder;
 
 .divs{
     height: 100px;
-    width: 225px;
+    width: 287px;
     background-color: grey;
     border-radius: 10px 10px 10px 10px;
     border-style: solid;
@@ -100,7 +100,7 @@ font-weight: bolder;
    }
 
 .texts>img{
-    left: 190px;
+    left: 245px;
     top:64px;
     position: absolute;
 }
@@ -108,8 +108,20 @@ font-weight: bolder;
 .toggle {
   cursor: pointer;
   display: inline-block;
+  position: absolute;
+  left:215px;
+  top:6px;
+}
+.toggle-checkbox{
+  position: absolute;
+  visibility: hidden;
 }
 
+input[type="checkbox"]
+{
+  position: absolute;
+  visibility: hidden;
+}
 .toggle-switch {
   display: inline-block;
   background: #ccc;
@@ -145,12 +157,6 @@ font-weight: bolder;
 .toggle-checkbox:checked + .toggle-switch:before {
   left: 30px;
 }
-
-.toggle-checkbox {
-  position: absolute;
-  visibility: hidden;
-}
-
 .toggle-label {
   margin-left: 5px;
   position: relative;
