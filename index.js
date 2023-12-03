@@ -1,5 +1,6 @@
 
-class books{                                                        //create Class to create Books Object
+class books
+{                                                        //create Class to create Books Object
 constructor(name,author,pages,read)
 {
     this.name = name;
@@ -7,9 +8,10 @@ constructor(name,author,pages,read)
     this.pages = pages;
     this.read = read;
 }
-info = function show(){
+info = function show()
+    {
     this.read = document.querySelector();
-}
+    }
 }
 let myLibrary=[];                                               //initialies empty array           
 function addBook(titleName,authorName,pagesnumber,read)              // creates function to add Book      
