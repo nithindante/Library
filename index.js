@@ -16,7 +16,7 @@ info = function show()
 let myLibrary=[];                                               //initialies empty array           
 function addBook(titleName,authorName,pagesnumber,read)              // creates function to add Book      
 {            
-    let newBook =  new books(titleName,authorName,pagesnumber,read);     // creates a object called newBook  
+    let newBook =  new books(titleName,authorName,pagesNumber,read);     // creates a object called newBook  
     myLibrary.push(newBook);                                        // pushes the NewBook object into an empty array
     addCard(newBook);                                               // calls the function to create card 
 }
